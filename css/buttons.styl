@@ -1,0 +1,48 @@
+button
+	cursor				pointer
+	transition			all 0.3s linear
+	&.fav	
+		min-width			3em
+		max-width			3em
+		min-height			3em
+		max-height			3em
+		min-height			3em
+		padding				0 0 0.1em
+		box-shadow			0em 0.2em 0.4em rgba(0, 0, 0, 0.5) , inset 0em -0.1em 0 rgba(0, 0, 0, 0.5)
+		border-radius		50%
+		border-width		0
+		&:hover
+			box-shadow			0em 0.2em 0.4em rgba(0, 0, 0, 0.5) , inset 0em -0.2em 0 rgba(0, 0, 0, 0.5)
+			padding				0 0 0.2em
+		&:active
+			box-shadow			0em 0.2em 0.4em rgba(0, 0, 0, 0.5) , inset 0em -0.1em 0 rgba(0, 0, 0, 0.8)
+			padding				0 0 0.1em
+	&.flat
+		min-width			3em
+		max-width			3em
+		min-height			3em
+		max-height			3em
+		min-height			3em
+		margin				auto 1em 1em auto
+		padding				0
+		border-radius		50%
+		border-width		0
+		&:hover
+			box-shadow			0 0.2em 0.4em rgba(0, 0, 0, 0.5) , inset 0 -0.2em 0 rgba(0, 0, 0, 0.5)
+			padding				0 0 0.2em
+		&:active
+			box-shadow			0 0.2em 0.4em rgba(0, 0, 0, 0.5), inset 0 -0.1em 0 rgba(0, 0, 0, 0.5)
+			padding				0 0 0.1em
+	&.whiteShadow
+		box-shadow			inset 0em -0.1em 0 rgba(0, 0, 0, 0.5)
+		&:hover
+			box-shadow			0 0 0.4em rgba(255, 255, 255, 0.5) , inset 0 -0.2em 0 rgba(0, 0, 0, 0.5)
+			padding				0 0 0.2em
+	&.left
+		position			absolute
+		bottom				1em
+		left				2em
+	&.right
+		position				absolute
+		bottom				1em
+		right				2em

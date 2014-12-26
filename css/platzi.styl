@@ -1,0 +1,218 @@
+platzi
+	& .okr
+		flex			1
+		margin-top		2em
+		justify-content	center
+		align-items		stretch
+	&-header
+		&-user-image
+			transition			all 1s ease-in-out
+			display				flex
+			justify-content		center
+			align-items			center
+			position			absolute
+			right				1.5em
+			top					0.5em
+			background-color	#FFF
+			min-width			5em
+			max-width			5em
+			min-height			5em
+			max-height			5em
+			min-height			5em
+			border-radius		50%
+			border-width		0.2em
+			border-style		solid
+			border-color		#fff
+			box-shadow			0em 0.2em 0.3em rgba(0, 0, 0, 0.5) , inset 0 0 0.1em #fff
+			z-index				110
+			&:hover
+				box-shadow		0em 0.3em 0.4em rgba(0, 0, 0, 0.5) , inset 0 0 0.1em #fff
+		&-dash
+			transition			all 2s ease-in-out
+			position			absolute
+			z-index				110
+			display				block
+			top					3em
+			right				6em
+			height				0.2em
+			width				12%
+			border-radius		0.1em
+			background-color	#FFF
+	&-paper
+		transition			all 1s ease-in-out
+		display				flex
+		justify-content		center
+		align-items			center
+		min-width			3em
+		min-height			4em
+		background-color	#fff
+		border-radius		0.5em
+		box-shadow			0em 0.2em 0.4em rgba(0, 0, 0, 0.5)
+		margin				1em
+		&:hover
+			box-shadow			0em 0.3em 0.5em rgba(0, 0, 0, 0.5)
+	&-board
+		z-index				-1
+		display				flex
+		justify-content		center
+		align-items			center
+		flex-direction		column
+		opacity				0
+		position			fixed
+		top					10%
+		left				10%
+		width				80%
+		height				80%
+		transition			all 0.3s ease-in-out
+		min-width			3em
+		min-height			4em
+		background-color	#fff
+		border-radius		0.5em
+		box-shadow			0em 0.4em 0.5em rgba(0, 0, 0, 0.5)
+		margin				1em
+		&:hover
+			box-shadow				0em 0.5em 0.6em rgba(0, 0, 0, 0.5)
+		&-header
+			position				absolute
+			top						0
+			left					0
+			min-height				3em
+			width					100%
+			background-color		#000
+			color					#fff
+			text-align				center
+			line-height			 	3em
+			border-top-left-radius	0.5em
+			border-top-right-radius	0.5em
+		& input
+			width					80%
+			height					2em
+			font-size				1.4em
+			line-height				2em
+			padding-left			1em
+			padding-right			1em
+			border-top-style		none
+			border-right-style		none
+			border-bottom-style		solid
+			border-left-style		none
+			border-radius			0.5em
+			text-align				center
+		
+		& textarea
+			width					80%
+			min-height				2em
+			font-size				1.4em
+			line-height				2em
+			padding-left			1em
+			padding-right			1em
+			border-top-style		none
+			border-right-style		none
+			border-bottom-style		solid
+			border-left-style		none
+			border-radius			0.5em
+			text-align				center
+	&-table
+		display				flex
+		flex				1
+		flex-direction		column
+		justify-content		center
+		align-items			stretch
+		background-color	#000
+		border-radius		0.5em
+		border-width		0.3em
+		border-style		solid
+		border-color		#000
+		margin				2em
+		min-height			100%
+	&-table-header
+		display				flex
+		flex				1
+		flex-direction		row
+		justify-content		center
+		align-items			center
+		max-height			3em
+		min-height			3em
+		border-radius		0.5em
+		border-width		0.15em
+		border-style		solid
+		border-color		#000
+		background-color	#000
+		color				#FFF
+		margin				0
+	&-table-row
+		display				flex
+		flex				1
+		flex-direction		row
+		min-height			3em
+		justify-content		center
+		align-items			stretch
+		margin				0
+		border-radius		0.5em
+	&-table-subRow
+		display				flex
+		flex				1
+		flex-direction		column
+		min-height			3em
+		border-radius		0.5em
+		justify-content		center
+		align-items			stretch
+		margin				0
+	&-table-headerColumn 
+		display				flex
+		flex				1
+		flex-direction		row
+		min-height			3em
+		border-color		#000
+		border-radius		0.5em
+		justify-content		center
+		align-items			center
+		margin				0
+		padding				0 0 0.2em
+	&-table-column 
+		cursor				pointer
+		transition			all 0.3s linear
+		display				flex
+		flex				1
+		flex-direction		row
+		min-height			3em
+		border-color		#000
+		border-radius		0.5em
+		justify-content		center
+		align-items			center
+		margin				0
+		padding				0 0 0.2em
+		&:hover
+			background-color	rgba(255, 255, 255, 0.3)
+			box-shadow			inset 0em -0.3em 0 rgba(0, 0, 0, 0.5)
+		&:active
+			background-color	rgba(255, 255, 255, 0.3)
+			box-shadow			inset 0em -0.1em 0 rgba(0, 0, 0, 0.8)
+		input
+			border-width		0
+			text-align			center
+			margin				0 0.5em 0 0.5em
+			background-color	rgba(0,0,0,0)
+			color				#FFF
+			font-weight			bold
+			text-overflow		ellipsis
+		p
+			margin				0.5em
+	&-colorPicker
+		display				flex
+		flex-direction		row
+		width				90%
+		min-height			3em
+		max-height			3em
+		margin				1em
+		border-radius		0.5em
+		&-color
+			transition			all 0.3s linear
+			display				flex
+			flex				1
+			border-radius		0.5em
+			box-shadow			inset 0em -0.2em 0 rgba(0, 0, 0, 0.3)
+			cursor				pointer
+			&:hover
+				box-shadow			inset 0em -0.3em 0 rgba(0, 0, 0, 0.5)
+			&:active
+				box-shadow			inset 0em -0.1em 0 rgba(0, 0, 0, 0.8)

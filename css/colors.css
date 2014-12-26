@@ -1,0 +1,84 @@
+.red {
+	background-color	: #F44336;
+	color				: #FFF;
+}
+.pink {
+	background-color	: #E91E63;
+	color				: #FFF;
+}
+.purple {
+	background-color	: #9C27B0;
+	color				: #FFF;
+}
+.deepPurple {
+	background-color	: #673AB7;
+	color				: #FFF;
+}
+.indigo {
+	background-color	: #3F51B5;
+	color				: #FFF;
+}
+.blue {
+	background-color	: #2196F3;
+	color				: #FFF;
+}
+.lightBlue {
+	background-color	: #03A9F4;
+	color				: #FFF;
+}
+.cyan {
+	background-color	: #00BCD4;
+	color				: #FFF;
+}
+.teal {
+	background-color	: #009688;
+	color				: #FFF;
+}
+.green {
+	background-color	: #4CAF50;
+	color				: #FFF;
+}
+.lightGreen {
+	background-color	: #8BC34A;
+	color				: #FFF;
+}
+.lime {
+	background-color	: #CDDC39;
+	color				: #000;
+}
+.yellow {
+	background-color	: #FFEB3B;
+	color				: #000;
+}
+.amber {
+	background-color	: #FFC107;
+	color				: #000;
+}
+.orange {
+	background-color	: #FF9800;
+	color				: #000;
+}
+.deepOrange {
+	background-color	: #FF5722;
+	color				: #FFF;
+}
+.brown {
+	background-color	: #795548;
+	color				: #FFF;
+}
+.grey {
+	background-color	: #9E9E9E;
+	color				: #FFF;
+}
+.blueGrey {
+	background-color	: #607D8B;
+	color				: #FFF;
+}
+.black {
+	background-color	: #000;
+	color				: #FFF;
+}
+.white {
+	background-color	: #FFF;
+	color				: #000;
+}

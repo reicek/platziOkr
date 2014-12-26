@@ -1,0 +1,171 @@
+<platzi-paper okr>
+	<platzi-table>
+		<platzi-table-header>
+			<platzi-table-headerColumn class="size-3">
+				<p>
+					Objective
+				</p>
+				<button class="green_background  whiteShadow addObjective fav" ng-click="showBoard('New Objective',objectives)">
+					+
+				</button>
+			</platzi-table-headerColumn>
+			<platzi-table-headerColumn class="size-3">
+				Key Result
+			</platzi-table-headerColumn>
+			<platzi-table-headerColumn class="size-2">
+				By
+			</platzi-table-headerColumn>
+			<platzi-table-headerColumn>
+				%
+			</platzi-table-headerColumn>
+			<platzi-table-headerColumn>
+				Deadline
+			</platzi-table-headerColumn>
+		</platzi-table-header>
+		<platzi-table-row class="{{objective.color}}_background" ng-repeat="objective in objectives">
+			<platzi-table-column class="size-3" ng-click="showBoard('Objective details',objective)">
+				<p>
+					{{objective.name}}
+				</p>
+			</platzi-table-column>
+			<platzi-table-subRow class="size-7">
+				<platzi-table-row ng-repeat="keyResult in objective.keyResults">
+					<platzi-table-column class="size-3" ng-click="showBoard('Edit Key Result',objective,keyResult)">
+						<p>
+							{{keyResult.name}}
+						</p>
+					</platzi-table-column>
+					<platzi-table-column class="size-2" ng-click="showBoard('Edit Key Result',objective,keyResult)">
+						<p>
+							{{keyResult.by}}
+						</p>
+					</platzi-table-column>
+					<platzi-table-column ng-click="showBoard('Edit Key Result',objective,keyResult)">
+						<p>
+							{{keyResult.progress}}%
+						</p>
+					</platzi-table-column>
+					<platzi-table-column ng-click="showBoard('Edit Key Result',objective,keyResult)">
+						<p>
+							{{keyResult.deadline  | date : 'shortDate'}}
+						</p>
+					</platzi-table-column>
+				</platzi-table-row>
+			</platzi-table-subRow>
+		</platzi-table-row>
+	</platzi-table>
+</platzi-paper okr>
+<!-- **********************************************************************	-->
+<!--								Add Objective 							-->
+<!-- **********************************************************************	-->
+<platzi-board id="platzi-board-newObjective">
+	<platzi-board-header>
+		{{board.header}}
+	</platzi-board-header>
+	<p>
+		Name your objective
+	</p>
+	<input class="{{newObjective.color}}_background" ng-model="newObjective.name">
+	</input>
+	<p>
+		Pick a color
+	</p>
+	<platzi-colorPicker>
+		<platzi-colorPicker-color class="{{color.name}}_background" ng-repeat="color in colors" ng-click="setNewObjectiveColor(color.name)">
+		</platzi-colorPicker-color>
+	</platzi-colorPicker>
+	<button class="yellow_background left fav" ng-click="hideBoard()">
+		X
+	</button>
+	<button class="green_background right fav" ng-click="addObjective(newObjective)" ng-show="newObjective.name">
+		+
+	</button>
+</platzi-board>
+<!-- **********************************************************************	-->
+<!--							Edit Objective	 							-->
+<!-- **********************************************************************	-->
+<platzi-board id="platzi-board-objectiveDetails">
+	<platzi-board-header>
+		{{board.header}}
+	</platzi-board-header>
+	<p>Edit objective name:</p>
+	<textarea class="{{objective.color}}_background" ng-model="objective.name">
+	</textarea>
+	<p>
+		¿Change color?
+	</p>
+	<platzi-colorPicker>
+		<platzi-colorPicker-color class="{{color.name}}_background" ng-repeat="color in colors" ng-click="setObjectiveColor(color)">
+		</platzi-colorPicker-color>
+	</platzi-colorPicker>
+	<p>Proposed by: <strong>{{objective.by}}</strong></p>
+	</br>
+	<p class="right">
+		Add Key Result
+		<button class="green_background fav" ng-click="addKeyResult('Add Key Result',objective)">
+			+
+		</button>
+	</p>
+	<p class="left">
+		<button class="red_background fav" ng-click="removeObjective()">
+			-
+		</button>
+		Delete objective
+	</p>
+	<button title="Cancel changes" class="yellow_background left fav" ng-click="cancelObjectiveChanges()">
+		X
+	</button>
+	<button title="Save changes" class="green_background right fav" ng-click="saveObjectiveChanges()">
+		OK
+	</button>
+</platzi-board>
+<!-- **********************************************************************	-->
+<!--							 Add Key Result								-->
+<!-- **********************************************************************	-->
+<platzi-board id="platzi-board-addKeyResult">
+	<div class="platzi-board-header">
+		{{board.header}} to
+	</div>
+	<h3>
+		-{{objective.name}}-
+	</h3>
+	<input class="{{objective.color}}_background" ng-model="newKeyResult.name">
+	</input>
+	<p>
+		Enter new Key Result <strong>deadline</strong>:
+	</p>
+	<input type="date" class="{{objective.color}}_background" ng-model="newKeyResult.deadline">
+	</input>
+	<button class="yellow_background left fav" ng-click="hideBoard()">
+		X
+	</button>
+	<button class="green_background right fav" ng-click="addNewKeyResult(objective, newKeyResult, index)" ng-show="newKeyResult.name && newKeyResult.deadline">
+		+
+	</button>
+</platzi-board>
+<!-- **********************************************************************	-->
+<!--								Edit KeyResult							-->
+<!-- **********************************************************************	-->
+<platzi-board id="platzi-board-editKeyResult">
+	<platzi-board-header>
+		{{board.header}}
+	</platzi-board-header>
+	<input class="{{objective.color}}_background" ng-model="keyResult.name">
+	</input>
+	<p>
+		<strong>Progress</strong>:
+	</p>
+	<input type="number" class="{{objective.color}}_background" ng-model="keyResult.progress" min="0" max="100">
+	</input>
+	<p>
+		<strong>Deadline</strong>:
+	</p>
+	<input type="date" class="{{objective.color}}_background" ng-model="keyResult.deadline">
+	</input>
+	<button title="Cancel changes" class="yellow_background left fav" ng-click="cancelKeyResultChanges()">
+		X
+	</button>
+	<button title="Save changes" class="green_background right fav" ng-click="saveKeyResultChanges()">
+		OK
+	</button>
+</platzi-board>

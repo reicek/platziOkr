@@ -1,0 +1,114 @@
+platzi-header-user-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  background-color: #fff;
+  min-width: 3em;
+  max-width: 3em;
+  min-height: 3em;
+  max-height: 3em;
+  min-height: 3em;
+  border-radius: 50%;
+  border-width: 0.2em;
+  border-style: inset;
+  border-color: #000;
+  box-shadow: 0em 0.2em 0.3em rgba(0,0,0,0.5), inset 0 0 0.1em #000;
+  z-index: 110;
+}
+platzi-header-dash {
+  display: block;
+  position: absolute;
+  top: 3em;
+  right: 4.6em;
+  height: 0.2em;
+  width: 90%;
+  border-radius: 0.1em;
+  background-color: #fff;
+  z-index: 111;
+}
+platzi-paper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 3em;
+  min-height: 4em;
+  background-color: #fff;
+  border-radius: 0.5em;
+  box-shadow: 0em 0.2em 0.4em rgba(0,0,0,0.5);
+  margin: 1em;
+}
+platzi-table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #000;
+  border-radius: 0.5em;
+  border-width: 0.3em;
+  border-style: solid;
+  border-color: #000;
+  margin: 2em;
+  min-height: 100%;
+}
+platzi-table-header {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-height: 3em;
+  min-height: 3em;
+  border-radius: 0.5em;
+  border-width: 0.15em;
+  border-style: solid;
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+}
+platzi-table-row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  min-height: 3em;
+  border-radius: 0.5em;
+  border-width: 0.15em;
+  border-style: solid;
+  border-color: #000;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #fff;
+  margin: 0;
+}
+platzi-table-column {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  min-height: 3em;
+  border-radius: 0.5em;
+  border-width: 0.1em;
+  border-style: dotted;
+  border-color: #000;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.size-1 {
+  flex: 1;
+}
+.size-2 {
+  flex: 2;
+}
+.size-3 {
+  flex: 3;
+}
+.size-4 {
+  flex: 4;
+}
+.size-5 {
+  flex: 5;
+}

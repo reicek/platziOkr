@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+	<!--	**************************************************************	-->
+	<!--		mejorando.la 2014 All rights reserved						-->
+	<!--		Site Name	:	https://platzi.firebaseio.com/				-->
+	<!--		Author		:	César Antón Dorantes - @reicek				-->
+	<!--		Date		:	25/10/2014									-->
+	<!--	**************************************************************	-->
+<html ng-app="Platzi">
+<head>
+	<meta	charset="UTF-8">
+	<meta	name="viewport"	content="width=device-width, initial-scale=1">
+	<!-- **********************************************************************	-->
+	<!--							Main Resoures								-->
+	<!-- **********************************************************************	-->
+	<link	href="head.html" rel="import">
+	<!-- **********************************************************************	-->
+</head>
+<body>
+	<header>
+		<h3 class="brand">platzi <small> - OKR</small></h3>
+		<platzi-header-dash>
+		</platzi-header-dash>
+		<p class="userName" id="userName"></p>
+		<platzi-header-user-image ng-controller="plusLogin_controller">
+			<img id="userImg"></img>
+			<span	class=	"signinButton">
+				<google-plus-signin clientid="244909961706-50vhq3g0qjaqnlvfrd6r5pakqpu4bf2m"></google-plus-signin>
+			</span>
+		</platzi-header-user-image>
+	</header>
+	<article ng-view>
+	</article>
+</body>
+	<!-- **********************************************************************	-->
+	<!--							Aditional Resoures							-->
+	<!-- **********************************************************************	-->
+	<!--	Note: Loaded at the end for best loading UX							-->
+	<!-- **********************************************************************	-->
+	<link	href="foot.html" rel="import">
+	<script	src="javascript/google-plus-signin.js"></script>
+	<!-- **********************************************************************	-->
+	<!--								Polymer									-->
+	<!-- **********************************************************************	-->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+	<!-- **********************************************************************	-->
+</html>
