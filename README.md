@@ -1,11 +1,9 @@
-platziOkr b0.1
-=========
+#Real-Time OKR manager
+####platziOkr b0.1
+######*by César Antón Dorantes*
+######*sponsored by Mejorando.la*
 
-Real-Time OKR manager
-https://platzi.firebaseapp.com/
-
-- by César Antón Dorantes
-- sponsored by Mejorando.la
+###[Go to Demo](https://platzi.firebaseapp.com/)
 
 Real-time HTML5 web app to administer group or personal Objective-Key-Results, built with Stylus and Angularfire (AngularJS + Firebase).
 
