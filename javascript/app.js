@@ -74,6 +74,21 @@
 		return user;
 	});
 //	*****************************************************************
+//	*	Data custom filters
+//  *		Parses data before displaying it
+//	*****************************************************************
+	Platzi.filter('daysUntil_filter', function()
+	{
+		return function(targetDate)
+		{
+			var millisecondsPerDay	= 1000*60*60*24;
+			var today 				= new Date();
+			var daysUntil			= Math.floor((targetDate - today)/millisecondsPerDay);
+
+			return daysUntil;
+		};
+	});
+//	*****************************************************************
 //	*	Controllers
 //  *		Used for logic and Dom data inyection
 //	*****************************************************************
@@ -140,7 +155,7 @@
 			console.log($scope.objectives)
 			console.log('___________________');	
 		});
-		$scope.showBoard		= function(board_title,data,property)
+		$scope.showBoard			= function(board_title,data,property)
 		{
 			console.log('___________________');	
 			console.log('Show board "'+board_title+'":')
@@ -186,7 +201,7 @@
 			}
 			console.log('___________________');
 		};
-		$scope.hideBoard		= function()
+		$scope.hideBoard			= function()
 		{
 			console.log('Board hidden.');
 
@@ -195,7 +210,7 @@
 			$scope.board['header']		= '';
 			$scope.board['message']		= '';
 		};
-		$scope.addObjective		= function(objective)
+		$scope.addObjective			= function(objective)
 		{
 			console.log('___________________');	
 			console.log('Adding new objective from:');	
@@ -211,7 +226,7 @@
 					console.log('___________________');
 				});
 		};
-		$scope.addKeyResult		= function(title,objective)
+		$scope.addKeyResult			= function(title,objective)
 		{
 			console.log('___________________');	
 			console.log('Create new Key Result for:');	
@@ -228,7 +243,7 @@
 				$scope.newKeyResult['since']			= Date.now();
 				$scope.newKeyResult['by']				= user_factory.name;
 		};
-		$scope.addNewKeyResult	= function(objective, newKeyResult)
+		$scope.addNewKeyResult		= function(objective, newKeyResult)
 		{
 			newKeyResult["deadline"] = new Date(newKeyResult.deadline).getTime();
 

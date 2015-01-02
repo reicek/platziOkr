@@ -1,6 +1,6 @@
 <platzi-paper>
-	<p>Mostrar solo de:</p>
-	<input type="search" ng-model="filterUser"></input>
+	<p>Mostrar solo con:</p>
+	<input type="search" ng-model="user_filter"></input>
 	<platzi-table>
 		<platzi-table-header>
 			<platzi-table-headerColumn class="size-3">
@@ -24,7 +24,7 @@
 				Deadline
 			</platzi-table-headerColumn>
 		</platzi-table-header>
-		<platzi-table-row class="{{objective.color}}_background" ng-repeat="objective in objectives | filter : filterUser">
+		<platzi-table-row class="{{objective.color}}_background" ng-repeat="objective in objectives | filter : user_filter">
 			<platzi-table-column class="size-3" ng-click="showBoard('Objective details',objective)">
 				<p>
 					{{objective.name}}
@@ -49,7 +49,7 @@
 					</platzi-table-column>
 					<platzi-table-column ng-click="showBoard('Edit Key Result',objective,keyResult)">
 						<p>
-							{{keyResult.deadline  | date : 'shortDate'}}
+							{{keyResult.deadline | daysUntil_filter}} days
 						</p>
 					</platzi-table-column>
 				</platzi-table-row>
