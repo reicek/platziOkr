@@ -1,9 +1,4 @@
 platzi
-	& .okr
-		flex			1
-		margin-top		2em
-		justify-content	center
-		align-items		stretch
 	&-header
 		&-user-image
 			transition			all 1s ease-in-out
@@ -41,6 +36,7 @@ platzi
 	&-paper
 		transition			all 1s ease-in-out
 		display				flex
+		flex-direction 		column
 		justify-content		center
 		align-items			center
 		min-width			3em
@@ -49,6 +45,7 @@ platzi
 		border-radius		0.5em
 		box-shadow			0em 0.2em 0.4em rgba(0, 0, 0, 0.5)
 		margin				1em
+		padding 			1em
 		&:hover
 			box-shadow			0em 0.3em 0.5em rgba(0, 0, 0, 0.5)
 	&-board
@@ -123,7 +120,7 @@ platzi
 		border-style		solid
 		border-color		#000
 		margin				2em
-		min-height			100%
+		width 				100%
 	&-table-header
 		display				flex
 		flex				1

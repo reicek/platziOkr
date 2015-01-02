@@ -1,4 +1,6 @@
-<platzi-paper okr>
+<platzi-paper>
+	<p>Mostrar solo de:</p>
+	<input type="search" ng-model="filterUser"></input>
 	<platzi-table>
 		<platzi-table-header>
 			<platzi-table-headerColumn class="size-3">
@@ -22,7 +24,7 @@
 				Deadline
 			</platzi-table-headerColumn>
 		</platzi-table-header>
-		<platzi-table-row class="{{objective.color}}_background" ng-repeat="objective in objectives">
+		<platzi-table-row class="{{objective.color}}_background" ng-repeat="objective in objectives | filter : filterUser">
 			<platzi-table-column class="size-3" ng-click="showBoard('Objective details',objective)">
 				<p>
 					{{objective.name}}
@@ -54,7 +56,7 @@
 			</platzi-table-subRow>
 		</platzi-table-row>
 	</platzi-table>
-</platzi-paper okr>
+</platzi-paper>
 <!-- **********************************************************************	-->
 <!--								Add Objective 							-->
 <!-- **********************************************************************	-->
