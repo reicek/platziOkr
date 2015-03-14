@@ -123,7 +123,7 @@
 					
 					$('article').css('display','');
 					$('platzi-header-dash')		.css('width','90%');
-					$('header .brand')			.css('right','85%');
+					$('header .brand')			.css('margin-left','1em');
 					$('header #userName')		.html(user_factory.name);
 					$('header #userName')		.css('opacity','1');
 					$('header #userImg')		.attr('src',user_factory.picture);
@@ -143,19 +143,19 @@
 	});
 	Platzi.controller('okr_controller',	function($scope,$firebase,okrObjectives_factory,user_factory,colors_factory)
 	{
-		$scope.board				= [];
-		$scope.board['header']		= '';
-		$scope.board['message']		= '';
-		$scope.colors				= colors_factory;
-		$scope.objectives			= okrObjectives_factory;
-		$scope.objectives.$loaded().then(function() 
+		$scope.board					= [];
+		$scope.board['header']			= '';
+		$scope.board['message']			= '';
+		$scope.colors					= colors_factory;
+		$scope.objectives				= okrObjectives_factory;
+		$scope.objectives				.$loaded().then(function() 
 		{
 			console.log('___________________');	
 			console.log("ORKs loaded:");
 			console.log($scope.objectives)
 			console.log('___________________');	
 		});
-		$scope.showBoard			= function(board_title,data,property)
+		$scope.showBoard				= function(board_title,data,property)
 		{
 			console.log('___________________');	
 			console.log('Show board "'+board_title+'":')
@@ -172,19 +172,22 @@
 						$scope.newObjective['keyResults']	= [];
 					$('#platzi-board-newObjective')			.css('z-index','200');
 					$('#platzi-board-newObjective')			.css('opacity','1');
-					break;
-
-				case 'Add Key Result':
-					$scope.board['header']					= board_title;
-					$('#platzi-board-addKeyResult')			.css('z-index','200');
-					$('#platzi-board-addKeyResult')			.css('opacity','1');
-					break;
+					$('#newObjective-name_input')			.focus();
+					break
 
 				case 'Objective details':
 					$scope.board['header']					= board_title;
 					$scope.objective						= data;
 					$('#platzi-board-objectiveDetails')		.css('z-index','200');
 					$('#platzi-board-objectiveDetails')		.css('opacity','1');
+					$('#objective-name_input')				.focus();
+					break;
+
+				case 'Add Key Result':
+					$scope.board['header']					= board_title;
+					$('#platzi-board-addKeyResult')			.css('z-index','200');
+					$('#platzi-board-addKeyResult')			.css('opacity','1');
+					$('#newKeyResult-name_input')			.focus();
 					break;
 
 				case 'Edit Key Result':
@@ -194,23 +197,26 @@
 					$scope.keyResult.deadline				= new Date($scope.keyResult.deadline);
 					$('#platzi-board-editKeyResult')		.css('z-index','200');
 					$('#platzi-board-editKeyResult')		.css('opacity','1');
+					$('#keyResult-name_input')				.focus();
 					break;
 
 				default:
+					console.log('* Error: Unregistered board called! *')
 					break;
 			}
 			console.log('___________________');
 		};
-		$scope.hideBoard			= function()
+		$scope.hideBoard				= function()
 		{
 			console.log('Board hidden.');
 
-			$('platzi-board')			.css('z-index','-1');
-			$('platzi-board')			.css('opacity','0');
-			$scope.board['header']		= '';
-			$scope.board['message']		= '';
+			$('platzi-board')				.css('z-index','-1');
+			$('platzi-board')				.css('opacity','0');
+			$('#universal-filter_input')	.focus();
+			$scope.board['header']			= '';
+			$scope.board['message']			= '';
 		};
-		$scope.addObjective			= function(objective)
+		$scope.addObjective				= function(objective)
 		{
 			console.log('___________________');	
 			console.log('Adding new objective from:');	
@@ -226,7 +232,7 @@
 					console.log('___________________');
 				});
 		};
-		$scope.addKeyResult			= function(title,objective)
+		$scope.addKeyResult				= function(title,objective)
 		{
 			console.log('___________________');	
 			console.log('Create new Key Result for:');	
@@ -243,7 +249,7 @@
 				$scope.newKeyResult['since']			= Date.now();
 				$scope.newKeyResult['by']				= user_factory.name;
 		};
-		$scope.addNewKeyResult		= function(objective, newKeyResult)
+		$scope.addNewKeyResult			= function(objective, newKeyResult)
 		{
 			newKeyResult["deadline"] = new Date(newKeyResult.deadline).getTime();
 
@@ -268,7 +274,7 @@
 					console.log('___________________');
 				});
 		};
-		$scope.setObjectiveColor	= function(color)
+		$scope.setObjectiveColor		= function(color)
 		{
 			console.log('___________________');
 			console.log('Background color:');
@@ -277,7 +283,7 @@
 
 			$scope.objective['color']	= color.name;
 		};
-		$scope.setNewObjectiveColor	= function(color)
+		$scope.setNewObjectiveColor		= function(color)
 		{
 			console.log('___________________');
 			console.log('Background color:');
@@ -286,7 +292,7 @@
 
 			$scope.newObjective['color']	= color;
 		};
-		$scope.remove			= function(item)
+		$scope.remove					= function(item)
 		{
 			$remove(item)
 		};
@@ -342,7 +348,7 @@
 					console.log('___________________');	
 				});
 		}
-		$scope.removeObjective		= function()
+		$scope.removeObjective			= function()
 		{
 			$scope.objectives
 				.$remove($scope.objective)

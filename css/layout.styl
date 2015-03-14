@@ -34,7 +34,7 @@ body
 	font-size			100%
 	line-height			1.125em
 	z-index				1
-
+	
 header 
 	transition			all 1s ease-in-out
 	display				flex
@@ -74,12 +74,18 @@ input
 	line-height				2em
 	padding-left			1em
 	padding-right			1em
-	border-top-style		none
-	border-right-style		none
-	border-bottom-style		solid
-	border-left-style		none
+	border-style			none
 	border-radius			0.5em
 	text-align				center
+	background-color		#fefefe
+	box-shadow				0 0.1em 0.1em #999
+	transition				all 0.5s ease-in-out
+	&:hover
+		box-shadow				0 0.1em 0.2em #555
+	&:focus
+		outline					none
+	&[placeholder]
+		text-overflow			ellipsis
 a
 	text-decoration		none
 
@@ -90,10 +96,8 @@ a
 header
 	& .brand 
 		transition			all 2s ease-in-out
-		position			absolute
-		right				100%
 		width				5em
-		margin 				0
+		margin-left 		1em
 		line-height			2.6em
 
 	& .userName
